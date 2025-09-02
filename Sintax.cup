@@ -1,0 +1,103 @@
+package maquina;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+    
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+}
+:};
+
+terminal Articulo, Sustantivo, Pronombre, Adjetivo, Verbo, Preposición, Adverbio, Conjunción,
+Interjección, Numero,ERROR ;
+
+non terminal ORACIONT1, ORACIONT2, ORACIONT3, ORACIONT4, ORACIONT5, ORACIONT6, ORACIONT7, ORACIONT8, ORACIONT9,
+ORACIONT10 ORACIONT11 ORACIONT12 ORACIONT13 ORACIONT14 ORACIONT15 ORACIONT16 ORACIONT17 ORACIONT18 ORACIONT19
+ORACIONT20 ORACIONT21 ;
+
+
+ORACIONT1 ::= 
+   Articulo Verbo Preposición Sustantivo
+;
+
+ORACIONT2 ::= 
+    Articulo Verbo Preposición Sustantivo 
+;
+
+ORACIONT3 ::=   
+    Articulo Verbo Preposición Sustantivo Preposición
+;
+
+ORACIONT4 ::= 
+   Verbo Preposición Sustantivo Preposición
+;
+
+ORACIONT5 ::= 
+   Verbo Preposición Sustantivo 
+;
+
+ORACIONT6 ::= 
+  Adjetivo Sustantivo Preposición Adjetivo Sustantivo Verbo
+;
+
+ORACIONT7 ::= 
+  Preposición Adjetivo Sustantivo Verbo Adverbio
+;
+ORACIONT8 ::= 
+   Adjetivo Sustantivo Verbo Adverbio Sustantivo Verbo
+;
+ORACIONT9 ::= 
+   Articulo Adjetivo Sustantivo Verbo
+;
+
+ORACIONT10 ::= 
+   Articulo Adjetivo Sustantivo Verbo 
+;
+
+ORACIONT11 ::= 
+  Adjetivo Sustantivo Preposición Adjetivo Sustantivo 
+;
+
+ORACIONT12 ::= 
+  Preposición Adjetivo Sustantivo Verbo 
+;
+ORACIONT13 ::= 
+   Adjetivo Sustantivo Verbo Adverbio Sustantivo 
+;
+ORACIONT14 ::= 
+   Articulo Adjetivo 
+;
+
+ORACIONT15 ::= 
+   Adjetivo Sustantivo Verbo 
+;
+
+
+ORACIONT16 ::= 
+   Sustantivo Verbo Adverbio
+;
+
+ORACIONT17 ::= 
+  Preposición Adjetivo Sustantivo Verbo Adverbio
+;
+
+ORACIONT18 ::= 
+  Adverbio Preposición Sustantivo Preposición
+;
+ORACIONT19 ::= 
+   Adverbio Sustantivo Verbo Adjetivo Sustantivo Preposición Adjetivo 
+;
+ORACIONT20 ::= 
+   Verbo Preposición Sustantivo Verbo Adverbio Preposición Sustantivo 
+;
+
+ORACIONT21 ::= 
+   Articulo Adjetivo Sustantivo Verbo 
+;
